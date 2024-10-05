@@ -58,55 +58,40 @@ async(){
       fetchData(); 
     }, []);
 
-  const filterFunction = item.filter((country) => country.name.common.toLowerCase().includes(filterItem.toLowerCase()));
+  //const filterFunction = item.filter((country) => country.name.common.toLowerCase().includes(filterItem.toLowerCase()));
+  const filterFunction = item.filter((country) =>
+    country?.name?.common?.toLowerCase().includes(filterItem.toLowerCase())
+  );
+  
     
-return ( 
-    <div style={{
-        display:"flex",
-        flexDirection:"column",
-        padding:"50px",
-        justifyContent:"center",
-        alignItems:"center",    
-    }} >
-
-
-        <input 
-        type ="text" style={{
-            width:"500px",height:"20px"
-            }} 
-            value={filterItem}
-            placeholder="Search for Countries"
-            onChange={(e)=>setFilterItem(e.target.value)} ></input>   
-
-
-
-
-        <div className="countryCard" style={{
-            display:"flex",
-            flexDirection:"row",
-            flexWrap:"wrap",
-            margin:"10px",
-           
-
-        }}>
-        
-        
-            {filterFunction.map((country) =>{
-                
-                    return (
-                <CardImage
-                name={country.name.common}
-                alt={`Flag of ${country.name.common}`} 
-                image={country.flags.png}
-                key={country.ccn3}
-                />
-               )   
-            
-            })}
-        </div>
-        </div>
-    
-)
+  return (
+    <div style={{ display: "flex", flexDirection: "column", padding: "50px", justifyContent: "center", alignItems: "center" }}>
+      <input 
+        type="text"
+        className="search-input"
+        style={{ width: "500px", height: "20px" }} 
+        value={filterItem}
+        placeholder="Search for Countries"
+        onChange={(e) => setFilterItem(e.target.value)} 
+      />
+  
+      <div className="countryCard" style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", margin: "10px" }}>
+        {filterFunction.length > 0 ? (
+          filterFunction.map((country) => (
+            <CardImage
+              name={country.name.common}
+              alt={`Flag of ${country.name.common}`} 
+              image={country.flags.png}
+              key={country.ccn3}
+            />
+          ))
+        ) : (
+          <p>No matching countries found</p>
+        )}
+      </div>
+    </div>
+  );
+  
 }
 
 export default CardContainer;
