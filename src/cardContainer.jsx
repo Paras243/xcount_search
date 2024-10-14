@@ -164,7 +164,7 @@ const CardContainer = () => {
             />
           ))
         ) : (
-          <p>No matching countries found</p>
+          <p></p>
         )}
       </div>
     </div>
