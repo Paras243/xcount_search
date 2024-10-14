@@ -33,7 +33,7 @@
         </div>
     )
 }*/
-/*function CardImage({ name, image, alt }) {
+function CardImage({ name, image, alt }) {
     return (
       <div style={{
         padding: "10px",
@@ -61,4 +61,4 @@
     );
   }
 
-export default CardImage;*/
+export default CardImage;

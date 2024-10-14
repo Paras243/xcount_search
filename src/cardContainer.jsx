@@ -95,7 +95,7 @@ async(){
 }
 
 export default CardContainer;*/
-/*import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import CardImage from "./cardImage";
 
 const CardContainer = () => {
@@ -135,6 +135,7 @@ const CardContainer = () => {
       alignItems: "center",
     }}>
       
+      {/* Search Input */}
       <input
         type="text"
         className="search-input"
@@ -144,6 +145,7 @@ const CardContainer = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
+      {/* Country Cards */}
       <div className="countryCard" style={{
         display: "flex",
         flexDirection: "row",
@@ -169,4 +171,4 @@ const CardContainer = () => {
   );
 };
 
-export default CardContainer;*/
+export default CardContainer;
