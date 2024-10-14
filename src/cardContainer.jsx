@@ -141,7 +141,7 @@ const CardContainer = () => {
         className="search-input"
         style={{ width: "500px", height: "20px" }}
         value={searchTerm}
-        placeholder="Search for Countries"
+        placeholder="Search for countries..."
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
